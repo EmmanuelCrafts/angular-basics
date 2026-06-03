@@ -1,0 +1,74 @@
+
+<!-- student-profile.component.html -->
+<section class="student-page">
+
+  <div class="student-card">
+
+    <!-- Profile header -->
+    <div class="profile-header">
+      <div class="avatar">{{ studentName | slice:0:2 | uppercase }}</div>
+      <div>
+        <p class="profile-name">{{ studentName }}</p>
+        <p class="profile-sub">Student Profile</p>
+      </div>
+    </div>
+
+    <!-- Info rows -->
+    <div class="info-row">
+      <span class="info-label">
+         Age
+      </span>
+      <span class="info-value">{{ age }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">
+        Major
+      </span>
+      <span class="info-value">{{ major }}</span>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Edit name -->
+    <div class="edit-section">
+      <label class="field-label" for="nameInput">Edit name</label>
+      <input
+        id="nameInput"
+        type="text"
+        [(ngModel)]="studentName"
+        placeholder="Enter new name"
+      >
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Counter -->
+    <div class="counter-row">
+      <div class="counter-display">
+        <span class="counter-num">{{ counter }}</span>
+        <span class="counter-badge">clicks</span>
+      </div>
+      <button class="btn btn--primary" (click)="increaseCounter()">
+        <i class="ti ti-plus" aria-hidden="true"></i> Increment
+      </button>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- Actions -->
+    <div class="btn-group">
+      <button
+        class="btn btn--secondary"
+        [disabled]="isDisabled"
+        (click)="resetName()"
+      >
+        <i class="ti ti-refresh" aria-hidden="true"></i> Reset name
+      </button>
+      <button class="btn btn--secondary" (click)="toggleResetButton()">
+        {{ toggleText }}
+      </button>
+    </div>
+
+  </div>
+
+</section>
