@@ -48,7 +48,7 @@
         <span class="counter-num">{{ counter }}</span>
         <span class="counter-badge">clicks</span>
       </div>
-      <button class="btn btn--primary" (click)="increaseCounter()">
+      <button class="btn btn-primary" (click)="increaseCounter()">
         <i class="ti ti-plus" aria-hidden="true"></i> Increment
       </button>
     </div>
@@ -58,16 +58,27 @@
     <!-- Actions -->
     <div class="btn-group">
       <button
-        class="btn btn--secondary"
+        class="btn btn-secondary"
         [disabled]="isDisabled"
         (click)="resetName()"
       >
-        <i class="ti ti-refresh" aria-hidden="true"></i> Reset name
+       Reset name
       </button>
-      <button class="btn btn--secondary" (click)="toggleResetButton()">
+      <button class="btn btn-secondary" (click)="toggleResetButton()">
         {{ toggleText }}
       </button>
     </div>
+
+     <hr class="section-divider">
+      <div class="edit-age">
+       <button 
+        class="btn btn-secondary" 
+        (click)="increaseAge()" 
+        [disabled]="isIncreaseAgeButtonDisabled">
+       Increase age
+      </button>
+      <p class="error-message">{{ errorMessage }}</p>
+      </div>
 
   </div>
 
